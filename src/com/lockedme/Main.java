@@ -88,7 +88,7 @@ public class Main {
 						break;
 						
 					default:
-						System.out.println("Invalid Input.. try again");
+						System.out.println("Invalid Input.. try again {}");
 					
 				
 				}
