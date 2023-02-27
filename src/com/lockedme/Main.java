@@ -60,13 +60,13 @@ public class Main {
 									break;
 									
 								default :
-									System.out.println("Invalid Input..");
+									System.out.println("Invalid Input.. try again");
 								}
 								
 								
 							}
 						}catch(Exception e) {
-							System.out.println("Invalid Input..");
+							System.out.println("Invalid Input.. try again");
 						}
  
 						break;
@@ -88,7 +88,7 @@ public class Main {
 						break;
 						
 					default:
-						System.out.println("Invalid Input..");
+						System.out.println("Invalid Input.. try again");
 					
 				
 				}
@@ -103,39 +103,50 @@ public class Main {
 	}
 	
 	public static int displayMenu1() {
-		try {
-			int num ;
-			Date date = new Date();
-			System.out.println("\n\t  "+date.toGMTString());
-			System.out.println("--------- Welcome to LockedMe.com ----------\n");
-			System.out.println("1.Retrive All Files");
-			System.out.println("2.Operations");
-			System.out.println("3.Exit");
-			System.out.println("4.About");
-			System.out.println("Enter your choice = ");
-			num = sc.nextInt();
-			return num ;
-		}catch(Exception e) {
-			System.out.println("Enter a valid input and try again ..");
-			return 3;
-		}
+ 
+			String num="";
+			Date date = new Date();		
+			try 
+			{ 
+				System.out.println("\n\t  "+date.toGMTString());
+				System.out.println("--------- Welcome to LockedMe.com ----------\n");
+				System.out.println("1.Retrive All Files");
+				System.out.println("2.Operations");
+				System.out.println("3.Exit");
+				System.out.println("4.About");
+				System.out.println("Enter your choice = ");
+				num = sc.next(); 
+				Integer.parseInt(num); 
+				 
+			}  
+			catch (NumberFormatException e)  
+			{ 
+
+				return 99;
+
+			} 
+			int get = Integer.parseInt(num);
+			return get;
+		
+ 
 		 
 	}
 	
 	public static int displayMenu2() {
+		String  num ="";
 		try {
-			int num ;
+			
 			System.out.println("\n1.Create File");
 			System.out.println("2.Delete File");
 			System.out.println("3.Search File");
 			System.out.println("4.Get all files in Accending Order");
 			System.out.println("5.Back to Main Menu");
 			System.out.println("Enter your choice = ");
-			num = sc.nextInt();
-			return num ;
+			num = sc.next();
+			return Integer.parseInt(num) ;
 		}catch(Exception e) {
-			System.out.println("Enter a valid input and try again ..");
-			return 5;
+ 
+			return 99;
 		}
 	}
 	
